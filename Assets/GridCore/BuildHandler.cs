@@ -33,6 +33,8 @@ public class BuildHandler : MonoBehaviour
         }
     }
 
+    public KeyCode CursorReleaseKey = KeyCode.End;  //default is End key
+    public KeyCode UnSelectKey = KeyCode.Alpha0;
 
     [System.Serializable]
     public class BuildableObject
@@ -154,6 +156,12 @@ public class BuildHandler : MonoBehaviour
     }
     void PlayerInput()
     {
+        if (Input.GetKeyDown(UnSelectKey))
+        {
+          ChangeBlock(null, 0);
+          return;  //no need to continue
+        }
+
         for (int i = 0; i < buildableObject.Length; i++)
         {
             if (Input.GetKeyDown(buildableObject[i].gridHud.inputKey))
@@ -161,7 +169,7 @@ public class BuildHandler : MonoBehaviour
                 OnChangeBlock(buildableObject[i].gridObject, i);
             }
         }
-        if (Input.GetKey(KeyCode.End))  //Pressing 'End' key will disable Cursor Lock
+        if (Input.GetKey(CursorReleaseKey))  //Pressing 'End' key will disable Cursor Lock by pressing this 'definable' key
             Cursor.lockState = CursorLockMode.None;
     }
 
@@ -176,8 +184,6 @@ public class BuildHandler : MonoBehaviour
         else
             m_currentBlock.EnableGizmo(false);
     }
-
-
 
     void OnBuildInput()
     {
@@ -211,13 +217,14 @@ public class BuildHandler : MonoBehaviour
         if (newBlock != m_currentBlock)
         {
             m_currentBlock = newBlock;
+            buildableObject[m_lastIndex].gridHud.image.color = m_inActive;
+            if (m_currentBlock == null) return;
+            
             m_currentBlock.UseGizmo(position);
 
-            buildableObject[m_lastIndex].gridHud.image.color = m_inActive;
             buildableObject[index].gridHud.image.color = m_active;
             m_lastIndex = index;
         }
     }
 
 }
-

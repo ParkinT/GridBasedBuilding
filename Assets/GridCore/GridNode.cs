@@ -51,7 +51,7 @@ public class GridNode
 
     public Dictionary<Neighbour, GridNode> staticNeighbour = new Dictionary<Neighbour, GridNode>();
 
-    
+
 
     public Dictionary<BlockType, Stack<GameObject>> requiredNeighbours = new Dictionary<BlockType, Stack<GameObject>>()
     {
@@ -103,9 +103,9 @@ public class GridNode
             if (useCase[blockType][dir] == null)
             {
                 //Debug.LogWarning("Node is not in use, add " + block.name + ". Dir :" + dir);
-                Debug.Log("cant live without "+requiredNeighbours[BlockType.Floor].Count + " Floors");
-                Debug.Log("cant live without "+requiredNeighbours[BlockType.Ramp].Count + " Ramps");
-                Debug.Log("rcant live without "+requiredNeighbours[BlockType.Wall].Count+ " Walls");
+                Debug.Log("cannot live without "+requiredNeighbours[BlockType.Floor].Count + " Floors");
+                Debug.Log("cannot live without "+requiredNeighbours[BlockType.Ramp].Count + " Ramps");
+                Debug.Log("cannot live without "+requiredNeighbours[BlockType.Wall].Count+ " Walls");
 
                 useCase[blockType][dir] = block;
             }

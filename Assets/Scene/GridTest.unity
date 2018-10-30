@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 8
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,7 +39,6 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1885127456}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
-  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -55,10 +54,11 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -224,22 +224,52 @@ Prefab:
     - target: {fileID: 114677504592772972, guid: 841d3bfa83f337d44b14b616f59acb7e,
         type: 2}
       propertyPath: buildableObject.Array.data[0].gridHud.inputKey
-      value: 282
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 114677504592772972, guid: 841d3bfa83f337d44b14b616f59acb7e,
         type: 2}
       propertyPath: buildableObject.Array.data[1].gridHud.inputKey
-      value: 283
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114677504592772972, guid: 841d3bfa83f337d44b14b616f59acb7e,
         type: 2}
       propertyPath: buildableObject.Array.data[2].gridHud.inputKey
-      value: 284
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 114407227791711556, guid: 841d3bfa83f337d44b14b616f59acb7e,
         type: 2}
       propertyPath: visualizeGrid
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82480504369839824, guid: 841d3bfa83f337d44b14b616f59acb7e,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82480504369839824, guid: 841d3bfa83f337d44b14b616f59acb7e,
+        type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642281569312094, guid: 841d3bfa83f337d44b14b616f59acb7e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465811968032246, guid: 841d3bfa83f337d44b14b616f59acb7e, type: 2}
+      propertyPath: m_Name
+      value: '!Configuration'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114080813444115724, guid: 841d3bfa83f337d44b14b616f59acb7e,
+        type: 2}
+      propertyPath: BlockObject
+      value: 
+      objectReference: {fileID: 1267297677250034, guid: c07c20a0d8eb9394faff5f8ee8439c86,
+        type: 2}
+    - target: {fileID: 114677504592772972, guid: 841d3bfa83f337d44b14b616f59acb7e,
+        type: 2}
+      propertyPath: CursorReleaseKey
+      value: 27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 841d3bfa83f337d44b14b616f59acb7e, type: 2}
@@ -362,63 +392,78 @@ Prefab:
     - target: {fileID: 224010249617278694, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224010249617278694, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224010249617278694, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 111.25
       objectReference: {fileID: 0}
     - target: {fileID: 224010249617278694, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -18.75
       objectReference: {fileID: 0}
     - target: {fileID: 224705687737329472, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224705687737329472, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224705687737329472, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 161.25
       objectReference: {fileID: 0}
     - target: {fileID: 224705687737329472, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -18.75
       objectReference: {fileID: 0}
     - target: {fileID: 224090883363874104, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224090883363874104, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224090883363874104, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 211.25
       objectReference: {fileID: 0}
     - target: {fileID: 224090883363874104, guid: ad6e4b9ac20138b4abdc06451c39d35a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -18.75
       objectReference: {fileID: 0}
+    - target: {fileID: 114079265765489516, guid: ad6e4b9ac20138b4abdc06451c39d35a,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 114590645161997158, guid: ad6e4b9ac20138b4abdc06451c39d35a,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 114117796505112272, guid: ad6e4b9ac20138b4abdc06451c39d35a,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad6e4b9ac20138b4abdc06451c39d35a, type: 2}
   m_IsPrefabParent: 0
